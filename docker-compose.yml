@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+
+    alp:
+        image : alpine
+
+        volumes:
+            - shared_data:/data
+            - ./start_data/:/start_data
+
+        command : cp -a /start_data/. /data 
+
+
+volumes:
+
+    shared_data:
+
+        external : false
